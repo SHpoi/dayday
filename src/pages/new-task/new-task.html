@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title item-start>新增任务</ion-title>
+    <ion-buttons>
+      <button ion-button (click)="dismiss()">
+        <span ion-text class="back-btn">取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form role="form" [formGroup]="formModel" name="taskForm" (ngSubmit)="submit()">
+    <ion-list>
+      <ion-item (tap)="presentActionSheet()">
+        <ion-label>事件类型</ion-label>
+        <div item-end>
+          <ion-icon class="eventType" name="{{eventTypeIcon}}"></ion-icon>
+          {{eventTypeIconName}}
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label>事件名称</ion-label>
+        <ion-input type="text" [(ngModel)]="name" placeholder="请输入事件名称" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>开始日期</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD"  max="{{formModel.get('endDate').value}}" formControlName="startDate"></ion-datetime>
+        <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>结束日期</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD" min="{{this.formModel.get('startDate').value}}" formControlName="endDate"></ion-datetime>
+        <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>时间</ion-label>
+        <ion-datetime displayFormat="H:mm" pickerFormat="H:mm" formControlName="time"></ion-datetime>
+        <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>备注</ion-label>
+        <ion-input type="text" placeholder="请输入备注" formControlName="mark"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div text-center>
+      <button type="submit" class="submit" ion-button outline color="primary" mini round>确&nbsp;&nbsp;定</button>
+    </div>
+  </form>
+</ion-content>
+

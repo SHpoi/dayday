@@ -1,0 +1,113 @@
+timepicker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+
+  $darkWhite:whitesmoke;
+  $primary:#5caffc;
+  ion-navbar.toolbar{
+    padding: 8px 16px !important;
+  }
+  .toolbar-content span,.toolbar-content button,.toolbar-title{
+    color: #fff;
+    font-weight: normal;
+  }
+  .toolbar-content > span{
+    color:$darkWhite;
+  }
+
+  .toolbar-background{
+    background: #5caefc;
+    border-color: $darkWhite !important;
+  }
+
+  .toolbar-title-ios {
+    font-size: 1.8rem;
+  }
+
+  .visi-hidden{
+    visibility: hidden;
+  }
+
+  .date-header{
+    background-color: #5caefc !important;
+  }
+
+  
+
+  ion-header{
+    position: static !important;
+  }
+
+  .complete{
+    height:3.5rem !important;
+  }
+  .mini.week{
+    height: 0rem !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  .date-body{
+    background-color: #5caefc !important;
+    padding-bottom: 10px;
+  }
+  .date-body-next,.date-body-prev{
+    width:100%;
+    position: absolute;
+    top: 0;
+  }
+  .date-body-next{
+    left: 100%;
+  }
+  .date-body-prev{
+    left: -100%;
+  }
+
+  .date-header,.date-body>div{
+    padding: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    color:$darkWhite;
+  }
+  .date-body>div{
+    color: #fff;
+    font-weight: 400;
+    height: 3.5rem;
+    transition: height 100ms;
+  }
+  .date-item{
+    width: calc( 100%/7 );
+    float: left;
+  }
+  .date-body .date-item span{
+    width: 3rem;
+    display: block;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 3rem;
+    border-radius: 1.5rem;
+  }
+
+  .date-body .date-item.date-active span{
+    background: #fff;
+    color:$primary ;
+  }
+
+
+  @keyframes pop {
+    0%{
+      transform: scale(.2);
+    }
+    100%{
+      transfrom: translate(480px,0);
+    }
+  }
+
+
+
+
+}

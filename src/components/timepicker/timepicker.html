@@ -1,0 +1,52 @@
+<div (pan)="pan($event)" >
+  <ion-header >
+    <ion-navbar padding mode="ios">
+      <ion-buttons style="float: left">
+        <button ion-button icon-only>
+          <ion-icon name="ios-list"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title mode="ios" text-center>{{year}}年{{month}}月</ion-title>
+      <span style="float: right;line-height: 32px;" (tap)="jumpNow()">今天</span>
+    </ion-navbar>
+  </ion-header>
+  <div class="date-content" (swipe)="swipe($event)" >
+    <div class="date-header clearfix" >
+      <div class="date-item"><span>日</span></div>
+      <div class="date-item"><span>一</span></div>
+      <div class="date-item"><span>二</span></div>
+      <div class="date-item"><span>三</span></div>
+      <div class="date-item"><span>四</span></div>
+      <div class="date-item"><span>五</span></div>
+      <div class="date-item"><span>六</span></div>
+    </div>
+    <div class="clearfix" style="width: 100%;position: relative;">
+      <div class="date-body clearfix" style="width:100%" [@animateState]="state" (@animateState.done)="animationDone($event)">
+        <div *ngFor="let week of days;" [hidden]="week[0].nextMonth == true" class="clearfix {{flexState}} {{!isHasActiveDay(week)?'week':''}} {{isHasActiveDay(week)?'week-active':''}}">
+          <div *ngFor="let day of week;" class="date-item" [class.date-active]="day.active==true" (tap)="setActivatedDay(day.timeStamp)"  >
+            <span *ngIf="day.active==true" [@pop]="popSate" (@pop.done)="popDown($event)" [class.visi-hidden]="day.nextMonth || day.prevMonth">{{day.showDate}}</span>
+            <span *ngIf="day.active!==true" [class.visi-hidden]="day.nextMonth || day.prevMonth">{{day.showDate}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="date-body clearfix date-body-prev" [@animateState]="state">
+        <div *ngFor="let p_week of p_days;" [hidden]="p_week[0].nextMonth == true" class="clearfix {{flexState}} {{!isHasActiveDay(p_week)?'week':''}} {{isHasActiveDay(p_week)?'week-active':''}}">
+          <div *ngFor="let p_day of p_week;" class="date-item">
+            <span [class.visi-hidden]="p_day.nextMonth || p_day.prevMonth">{{p_day.showDate}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="date-body clearfix date-body-next" [@animateState]="state">
+        <div *ngFor="let n_week of n_days;" [hidden]="n_week[0].nextMonth == true" class="clearfix {{flexState}} {{!isHasActiveDay(n_week)?'week':''}} {{isHasActiveDay(n_week)?'week-active':''}}">
+          <div *ngFor="let n_day of n_week;" class="date-item"  >
+            <span [class.visi-hidden]="n_day.nextMonth || n_day.prevMonth">{{n_day.showDate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

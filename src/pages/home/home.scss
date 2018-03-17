@@ -1,3 +1,9 @@
 page-home {
 
+  .scroll-content{
+    overflow-y: hidden !important;
+  }
+  ion-content{
+    background-color:#F6FCFE !important;
+  }
 }

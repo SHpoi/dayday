@@ -1,0 +1,93 @@
+task-list {
+
+  $item-width:3.5rem;
+  ion-list ion-icon{
+    font-size: 3rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    background: #2196F3;
+    color: #fff;
+    height: $item-width;
+    line-height: $item-width !important;
+    width: $item-width;
+    border-radius: $item-width/2;
+  }
+
+  ion-label{
+
+  }
+
+  ion-label h2{
+    font-size: 1.5rem !important;
+    line-height: 2rem;
+    color: #4e4e4e;
+    font-weight: 500 !important;
+  }
+  ion-label p{
+    font-size: 1rem !important;
+    color: #f7f7f9;
+    font-weight: 500;
+  }
+
+  $item-border:none;
+  .item-ios{
+    border: $item-border;
+    margin: 10px 0px !important;
+    border-radius: 5px;
+    box-shadow:0px 0px 3px rgba(92,175,252,0.35);
+  }
+
+  .list-ios .item-block .item-inner {
+    border-bottom: none !important;
+  }
+
+  .list-ios > .item-block:first-child {
+     border-top: $item-border;
+  }
+
+  .list-ios > .item-block:last-child {
+    border-bottom: $item-border;
+  }
+
+  ion-list{
+    margin-bottom: 0 !important;
+    overflow-y: auto;
+    padding-top: 0 !important;
+    height: 100%;
+  }
+
+  .fab ion-icon {
+    font-size: 4.5rem;
+  }
+
+  //icon 颜色
+  ion-icon.study{
+    background: $a;
+  }
+  ion-icon.communicate{
+    background: $b;
+  }
+  ion-icon.film{
+    background: $c;
+  }
+  ion-icon.game{
+    background: $d;
+  }
+  ion-icon.sport{
+    background: $e;
+  }
+
+  .task-time{
+    color: #8e9093;
+    font-size: 1rem;
+    font-weight: 500;
+    position: absolute;
+    right: 1rem;
+  }
+
+
+
+
+
+
+}

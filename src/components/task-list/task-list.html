@@ -1,0 +1,12 @@
+
+<ion-list padding>
+    <ion-item *ngFor="let item of taskList;" (swipe)="swipe($event,item)" [hidden]="item.status!=='doing' && filterSuccess">
+      <ion-icon  item-start name="{{item.type.icon}}" [ngClass]="item.type.flag"></ion-icon>
+      <h2 style="position: relative">{{item.name}} <span class="task-time">{{item.time}}</span></h2>
+      <p>{{item.mark}}</p>
+    </ion-item>
+</ion-list>
+<ion-fab bottom center >
+  <button ion-fab (tap)="newTask()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+

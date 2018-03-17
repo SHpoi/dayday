@@ -1,0 +1,53 @@
+page-new-task {
+
+
+  .back-btn{
+    color: #fff;
+    font-size: 1.4rem;
+  }
+
+  input{
+    color: #4e4e4e;
+    font-size: 1.7rem;
+  }
+  input{
+    text-align: right;
+  }
+
+  ion-label{
+    color:#8e9093;
+    font-size: 1.3rem;
+    min-width: 4.6rem;
+  }
+
+  .ion-ios-arrow-forward-outline{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    color: #8e9093 !important;
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+
+  .submit{
+    font-size: 1.3rem;
+    padding: 0 3.5rem;
+  }
+
+  .item-ios{
+    background-color: transparent;
+  }
+
+  .list-ios > .item-block:last-child{
+    border-bottom: none !important;
+  }
+
+  .list-ios .item-block:last-child .item-inner {
+    border-bottom: 0.55px solid #c8c7cc;
+  }
+
+  .eventType{
+    vertical-align: middle;
+  }
+
+
+}

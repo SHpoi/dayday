@@ -14,3 +14,98 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.clearfix:after,.clearfix:before{
+  content:' ';
+  display: table;
+}
+.clearfix:after{
+  clear:both;
+}
+
+ion-app.ios{
+  font-family:"PingFang SC", "Microsoft Yahei", serif !important;
+}
+
+html,body{
+  font-size:62.5%;
+}
+
+
+.toolbar-background{
+  background-color: #5caefc !important;
+}
+.toolbar-title{
+  font-size: 1.8rem !important;
+  font-weight: normal!important;
+  color: #fff;
+}
+
+ion-navbar.toolbar {
+  padding: 8px 16px !important;
+}
+
+.header-ios .toolbar-background-ios {
+  border-color: #fff;
+}
+
+//action event-type-icon
+
+$act-icon-font-weight: 600;
+.event-icon-study{
+  ion-icon{
+    color: $a !important;
+    font-weight: $act-icon-font-weight;
+  }
+}
+.event-icon-communicate{
+  ion-icon{
+    color: $b !important;
+    font-weight: $act-icon-font-weight;
+  }
+}
+.event-icon-film{
+  ion-icon{
+    color: $c !important;
+    font-weight: $act-icon-font-weight;
+  }
+}
+.event-icon-game{
+  ion-icon{
+    color: $d !important;
+    font-weight: $act-icon-font-weight;
+  }
+}
+.event-icon-sport{
+  ion-icon{
+    color: $e !important;
+    font-weight: $act-icon-font-weight;
+  }
+}
+
+//在toast前面加图标
+.urgent-success .toast-message:before,.urgent-delete .toast-message:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  font-style: normal;
+  font-weight: bolder;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  padding-right: 10px;
+  font-size: 2.5rem;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+
+.urgent-success .toast-message:before{
+  content: "\f2bb";
+  color: #79DF92;
+}
+
+.urgent-delete .toast-message:before{
+  content: "\f2bf";
+  color: #f53d3d;
+}
